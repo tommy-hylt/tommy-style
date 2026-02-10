@@ -162,7 +162,36 @@ export function getDateText(date: Date) {
 
 ---
 
-## 9. Spread for Immutable Updates
+## 9. Inline Functions
+
+Define functions at the point of use rather than extracting them into named variables or separate declarations. If the logic is short and only used once, inline it directly:
+
+```typescript
+// Inline callbacks in chains
+items.find((item) => item.level === level)
+unitTexts.map((text) => text !== undefined ? (text ? parseMiddle(text) : 1) : 0)
+array.filter((i) => i !== item)
+
+// Inline in hooks
+return useMemo(() => items.find((item) => item.level === level), [items, level]);
+
+// Inline state updater
+setState((oldState) => ({
+  ...oldState,
+  ratio: Math.min(oldState.ratio + elapsed / transition, 1),
+}));
+
+// Inline in JSX
+<div className={`footers-Footer ${active ? "active" : ""}`}>
+```
+
+Do not extract a function just to name it. If the arrow function reads clearly at the call site, keep it there. Extracting adds indirection — the reader has to jump elsewhere to understand what happens. Inline keeps the logic where the reader is already looking.
+
+Only extract when the function is reused or too complex to read inline.
+
+---
+
+## 10. Spread for Immutable Updates
 
 Always spread old state and override changed fields. Never mutate:
 
@@ -189,4 +218,5 @@ setState((oldState) => ({
 | `.map()` + `.filter(t => !!t)` | Early exit inside functional chains |
 | Object shorthand | When variable name matches property name |
 | Template literals | All string assembly |
+| Inline functions | Keep short, single-use functions at the call site |
 | Spread | All state updates — never mutate |

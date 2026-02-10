@@ -199,7 +199,34 @@ allWords: [] as Word[],
 
 ---
 
-## 10. Strict Configuration
+## 10. `undefined` Over `null`
+
+Avoid `null`. Use `undefined` to represent absent values. A value is either there or it is not — `undefined` means "absent," which is logically clear. `null` implies "intentionally empty," a distinction that rarely matters and adds a second bottom type to check against.
+
+```typescript
+// Good — undefined for absence
+export function parseChineseNumber(text: string) {
+  if (!text) {
+    return undefined;
+  }
+  return parseNumber(`${text}`);
+}
+
+// Good — optional properties are undefined, not null
+export interface ItemStart {
+  name?: Record<Language, string>;
+  successMessage?: Record<Language, string>;
+}
+
+// Good — ?? works naturally with undefined
+const outputCenterX = inputCenterX ?? chartWidth / 2;
+```
+
+This also aligns with TypeScript's own conventions — optional parameters and properties are `T | undefined`, not `T | null`. Using `undefined` exclusively means `??`, `?.`, and optional properties all work consistently without mixed null checks.
+
+---
+
+## 11. Strict Configuration
 
 All projects use strict mode. No exceptions:
 
@@ -233,5 +260,6 @@ Zero uses of `any`. Zero uses of `unknown`. The codebase is fully typed.
 | Private types | Bottom of the file that uses them |
 | Props | `interface Props` at bottom of component file |
 | Return types | Inferred unless generic or unclear |
+| `null` | Avoid. Use `undefined` for absence |
 | `any` | Never |
 | Strict mode | Always |
