@@ -23,7 +23,7 @@ function hydrate(dir) {
 
       // Fallback: If not found in current project, check neighboring "tommy-style" directory
       if (!fs.existsSync(sourcePath)) {
-        const neighboringTommyPath = path.resolve(sourcePath, '../../tommy-style', path.basename(sourcePath));
+        const neighboringTommyPath = path.resolve(sourcePath, '../../../tommy-style', path.basename(sourcePath));
         if (fs.existsSync(neighboringTommyPath)) {
           sourcePath = neighboringTommyPath;
         }
