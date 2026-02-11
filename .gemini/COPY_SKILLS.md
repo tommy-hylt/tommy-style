@@ -4,6 +4,8 @@ This repository uses a "dehydrated" skill structure to avoid maintaining duplica
 
 ## How to Sync/Hydrate Skills
 
+### Option A: Manual/AI Procedure
+
 When asked to "sync skills," "hydrate skills," or "copy skills," follow this procedure:
 
 1. **Scan**: Look for all files ending in `-replace.txt` within the `.gemini/skills/` directory.
@@ -15,3 +17,12 @@ When asked to "sync skills," "hydrate skills," or "copy skills," follow this pro
    - Write that content into the skill folder using the target filename.
 4. **Verification**: Ensure the skill folder now contains the full `.md` file alongside the `SKILL.md` file.
 5. **Cleanup**: Do not keep the `-replace.txt` files.
+
+### Option B: Automated Script
+
+Alternatively, you can run the provided Node.js script from the `skills` directory:
+
+```bash
+cd .gemini/skills
+node hydrate.js
+```
