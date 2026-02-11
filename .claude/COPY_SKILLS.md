@@ -14,5 +14,4 @@ When asked to "sync skills," "hydrate skills," or "copy skills," follow this pro
    - Read the content of the source file from the root.
    - Write that content into the skill folder using the target filename.
 4. **Verification**: Ensure the skill folder now contains the full `.md` file alongside the `SKILL.md` file.
-
-**Note**: Do NOT delete the `-replace.txt` files. They are the permanent markers for future syncs.
+5. **Cleanup**: Do not keep the `-replace.txt` files.
