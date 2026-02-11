@@ -6,7 +6,7 @@ This folder contains the specialized skill definitions for Tommy's coding style.
 
 To import these skills into your own project (e.g., while working in a sibling directory like `do-do`), use the following prompt in your project's Gemini session:
 
-> "Follow the hydration protocol in ../tommy-style/.gemini/COPY_SKILLS.md to copy the skills into my current project"
+> Follow the hydration protocol in ../tommy-style/.gemini/COPY_SKILLS.md to copy the skills into my current project
 
 ## Contents
 

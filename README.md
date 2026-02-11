@@ -24,7 +24,7 @@ If you are working in a sibling project (e.g., `do-do`) and have this repository
 1. Open a Gemini session in your project.
 2. Use the following prompt to import the skills:
 
-> "Follow the hydration protocol in ../tommy-style/.gemini/COPY_SKILLS.md to copy the skills into my current project"
+> Follow the hydration protocol in ../tommy-style/.gemini/COPY_SKILLS.md to copy the skills into my current project
 
 ## Claude Code Skills
 
@@ -35,7 +35,7 @@ This repository also includes a `.claude/` folder containing specialized skills 
 1. Open a Claude Code session in your project.
 2. Use the following prompt to import the skills:
 
-> "Follow the hydration protocol in ../tommy-style/.claude/COPY_SKILLS.md to copy the skills into my current project"
+> Follow the hydration protocol in ../tommy-style/.claude/COPY_SKILLS.md to copy the skills into my current project
 
 ## Dehydrated Architecture
 
