@@ -18,11 +18,12 @@ When asked to "sync skills," "hydrate skills," or "copy skills," follow this pro
 4. **Verification**: Ensure the skill folder now contains the full `.md` file alongside the `SKILL.md` file.
 5. **Cleanup**: Do not keep the `-replace.txt` files.
 
-### Option B: Automated Script
+### Option B: Automated Script (Recommended for AI)
 
-Alternatively, you can run the provided Node.js script from the `skills` directory:
+If you are an AI assistant, you should use the following commands to automate the process:
 
-```bash
-cd .gemini/skills
-node hydrate.js
+```powershell
+# 1. Copy the script to the target skills directory (e.g. in "do-do")
+# 2. Run the script
+node .gemini/skills/hydrate.js
 ```
