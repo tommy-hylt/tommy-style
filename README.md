@@ -1,6 +1,6 @@
 # Tommy Style
 
-A collection of coding guidelines and specialized Gemini skills designed to enforce a specific, high-quality coding style across projects.
+A collection of coding guidelines and specialized AI agent skills designed to enforce a specific, high-quality coding style across projects.
 
 ## Core Guidelines
 
@@ -26,6 +26,17 @@ If you are working in a sibling project (e.g., `do-do`) and have this repository
 
 > "Follow the hydration protocol in ../tommy-style/.gemini/COPY_SKILLS.md to copy the skills into my current project"
 
+## Claude Code Skills
+
+This repository also includes a `.claude/` folder containing specialized skills for Claude Code. Skills use `SKILL.md` with YAML frontmatter and are auto-discovered by Claude Code when present in a project.
+
+### How to use in your project
+
+1. Open a Claude Code session in your project.
+2. Use the following prompt to import the skills:
+
+> "Follow the hydration protocol in ../tommy-style/.claude/COPY_SKILLS.md to copy the skills into my current project"
+
 ## Dehydrated Architecture
 
-The skills in `.gemini/skills/` are "dehydrated" to avoid duplicate maintenance. They point back to the root markdown files as the single source of truth. The hydration protocol handles the expansion of these files into your target workspace.
+The skills in `.gemini/skills/` and `.claude/skills/` are "dehydrated" to avoid duplicate maintenance. They point back to the root markdown files as the single source of truth. The hydration protocol handles the expansion of these files into your target workspace.
